@@ -1,147 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- =============================
-       META & TITLE
-       ============================= -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Business Landing Page | Designed by Hoyt</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HackingHoyt Designs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">HackingHoyt Designs</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <!-- =============================
-       CSS LINK
-       ============================= -->
-  <link rel="stylesheet" href="style.css" />
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <h1>Build Your Digital Presence</h1>
+        <p>Professional, modern landing pages that turn visitors into clients.</p>
+        <button class="cta-btn" id="get-started">Get Started</button>
+      </div>
+    </section>
 
-  <!-- =============================
-       GOOGLE FONTS (modern & clean)
-       ============================= -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-</head>
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p class="about-text">
+          Hi, I'm Hoyt — a web designer who helps small businesses shine online.
+          From concept to launch, I’ll craft a landing page that represents your brand perfectly.
+        </p>
+      </div>
+    </section>
 
-<body>
-  <!-- =============================
-       HEADER / NAVBAR
-       ============================= -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">HackingHoyt Designs</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- =============================
-       HERO SECTION
-       ============================= -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Build Your Digital Presence</h1>
-      <p>Professional, modern landing pages that turn visitors into clients.</p>
-      <a href="#contact" class="btn-primary">Get Started</a>
-    </div>
-  </section>
-
-  <!-- =============================
-       ABOUT SECTION
-       ============================= -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        Hi, I’m Hoyt — a web designer who helps small businesses shine online.
-        From concept to launch, I’ll craft a landing page that represents your brand perfectly.
-      </p>
-    </div>
-  </section>
-
-  <!-- =============================
-       SERVICES SECTION
-       ============================= -->
-  <section id="services">
-    <div class="container">
-      <h2>Services</h2>
-      <div class="service-grid">
-        <div class="service-card">
-          <h3>Custom Design</h3>
-          <p>Unique, responsive layouts built for your brand and audience.</p>
-        </div>
-        <div class="service-card">
-          <h3>SEO Optimization</h3>
-          <p>Rank higher on Google with clean, optimized site code.</p>
-        </div>
-        <div class="service-card">
-          <h3>Fast Delivery</h3>
-          <p>Get your landing page live within just a few days.</p>
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3 class="card-title">Custom Design</h3>
+            <p class="card-text">
+              Unique, responsive layouts built for your brand and audience.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card-title">SEO Optimization</h3>
+            <p class="card-text">
+              Rank higher on Google with clean, optimized site code.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Fast Delivery</h3>
+            <p class="card-text">
+              Get your landing page live within just a few days.
+            </p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =============================
-       PORTFOLIO SECTION
-       ============================= -->
-  <section id="portfolio" class="portfolio">
-  <h2>Portfolio</h2>
-  <p class="section-subtitle">Recent work and live projects.</p>
-  <div class="portfolio-grid">
-    <!-- Project 1 -->
-    <a href="https://smokyvenues.com" class="portfolio-card" target="_blank" rel="noopener">
-      <h3>Smoky Venues</h3>
-      <p>Local/event site built with Next.js to showcase Smoky Mountain venues.</p>
-      <span class="tag">Next.js</span>
-      <span class="tag">Local Business</span>
-    </a>
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p class="section-sub">Recent work and live projects.</p>
+        <div class="cards-grid">
+          <!-- 1 -->
+          <article class="card">
+            <h3 class="card-title">Smoky Venues</h3>
+            <p class="card-text">
+              Local/event site built with Next.js to showcase Smoky Mountain venues.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">Local Business</span>
+            </div>
+            <a
+              href="https://smokyvenues.com"
+              target="_blank"
+              rel="noopener"
+              class="card-link"
+              >View site →</a
+            >
+          </article>
 
-    <!-- Project 2 -->
-    <a href="http://www.hackinghoyt.com" class="portfolio-card" target="_blank" rel="noopener">
-      <h3>HackingHoyt.com</h3>
-      <p>Personal portfolio + experiments. Shows your style, story, and services.</p>
-      <span class="tag">Portfolio</span>
-      <span class="tag">Branding</span>
-    </a>
+          <!-- 2 -->
+          <article class="card">
+            <h3 class="card-title">HackingHoyt.com</h3>
+            <p class="card-text">
+              Personal portfolio + experiments. Shows your style, story, and services.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Portfolio</span>
+              <span class="tag">Branding</span>
+            </div>
+            <a
+              href="https://hackinghoyt.com"
+              target="_blank"
+              rel="noopener"
+              class="card-link"
+              >View site →</a
+            >
+          </article>
 
-    <!-- Project 3 -->
-    <a href="#" class="portfolio-card">
-      <h3>Business Landing Page (Demo)</h3>
-      <p>High-converting layout for Fiverr clients: hero, services, portfolio, contact.</p>
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">Landing</span>
-    </a>
-  </div>
-</section>
+          <!-- 3 -->
+          <article class="card">
+            <h3 class="card-title">Business Landing Page (Demo)</h3>
+            <p class="card-text">
+              High-converting layout for Fiverr clients: hero, services, portfolio, contact.
+            </p>
+            <div class="card-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Landing</span>
+            </div>
+            <!-- stay on page -->
+            <button class="card-button" type="button">
+              This page
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- CONTACT -->
+    <!-- <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-wrapper">
+          <form class="contact-form" id="contact-form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              class="field-half"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              class="field-half"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Send Message</button>
+            <p class="contact-note" id="contact-note">
+              <!-- JS will fill this -->
+            </p>
+          </form>
+        </div>
+      </div>
+    </section> -->
 
-  <!-- =============================
-       CONTACT SECTION
-       ============================= -->
-  <section id="contact" class="contact-section">
+    <section id="contact">
   <h2>Contact</h2>
-  <form id="contactForm" class="contact-form">
-    <input id="name" type="text" placeholder="Your Name" required>
-    <input id="email" type="email" placeholder="Your Email" required>
-    <textarea id="message" placeholder="Your Message" required></textarea>
+  <form class="contact-form">
+    <div class="contact-row">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+    </div>
+    <textarea name="message" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
-    <p id="formStatus" class="form-status"></p>
+    <p class="contact-note">Message sent (demo only — in production this would email Hoyt.)</p>
   </form>
 </section>
 
 
-  <!-- =============================
-       FOOTER
-       ============================= -->
-  <footer>
-    <p>© 2025 HackingHoyt Designs. Built with ❤️ by Hoyt.</p>
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+      © 2025 HackingHoyt Designs. Built with <span>♥</span> by Hoyt.
+    </footer>
 
-  <!-- =============================
-       SCRIPT LINK
-       ============================= -->
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

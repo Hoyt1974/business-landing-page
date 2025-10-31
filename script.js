@@ -1,20 +1,16 @@
-// ===============================
-// BUSINESS LANDING PAGE - JS
-// ===============================
+// BUSINESS LANDING PAGE LOGIC
 
-// 1) Smooth scroll for nav links
-const navLinks = document.querySelectorAll('a[href^="#"]');
+// smooth scroll for nav + get started
+const smoothLinks = document.querySelectorAll('a[href^="#"], #get-started');
 
-navLinks.forEach((link) => {
+smoothLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    const targetId = link.getAttribute("href");
-    // ignore real external links
-    if (targetId === "#" || !targetId.startsWith("#")) return;
-
+    const targetId = link.getAttribute("href") || "#contact";
+    if (!targetId.startsWith("#")) return;
     e.preventDefault();
-    const section = document.querySelector(targetId);
-    if (section) {
-      section.scrollIntoView({
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -22,65 +18,33 @@ navLinks.forEach((link) => {
   });
 });
 
-// 2) Highlight active section in navbar on scroll
+// highlight active section on scroll
+const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll("section");
-const nav = document.querySelector("nav"); // only if you ever need offset
-const offset = 120; // small offset so it switches a little earlier
 
 window.addEventListener("scroll", () => {
-  let currentSectionId = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - offset;
-    if (scrollY >= sectionTop) {
-      currentSectionId = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    const href = link.getAttribute("href");
-    if (href === `#${currentSectionId}`) {
-      link.classList.add("active");
+  const scrollY = window.scrollY;
+  sections.forEach((sec) => {
+    const top = sec.offsetTop - 150;
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute("id");
+    if (scrollY >= top && scrollY < top + height) {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add("active");
     }
   });
 });
 
-// 3) Contact form logic (demo submit)
-const contactForm = document.getElementById("contactForm");
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const messageInput = document.getElementById("message");
-const formStatus = document.getElementById("formStatus");
+// fake contact submit
+const contactForm = document.getElementById("contact-form");
+const contactNote = document.getElementById("contact-note");
 
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
-
-    // simple email pattern
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!name || !email || !message) {
-      formStatus.textContent = "Please fill in all fields.";
-      formStatus.style.color = "#d9534f";
-      return;
-    }
-
-    if (!emailPattern.test(email)) {
-      formStatus.textContent = "Please enter a valid email.";
-      formStatus.style.color = "#d9534f";
-      return;
-    }
-
-    // success
-    formStatus.textContent = "Message sent! (demo only)";
-    formStatus.style.color = "#28a745";
-
+    contactNote.textContent =
+      "Message sent! (demo only — this would email Hoyt in production.)";
     contactForm.reset();
   });
 }
-
