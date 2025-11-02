@@ -1,1 +1,5 @@
-/* https://www.hackinghoyt.com/:splat 301!
+
+# Force HTTPS and redirect www to root domain
+http://www.hackinghoyt.com/*  https://hackinghoyt.com/:splat  301!
+http://hackinghoyt.com/*      https://hackinghoyt.com/:splat  301!
+https://www.hackinghoyt.com/* https://hackinghoyt.com/:splat  301!
